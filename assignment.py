@@ -48,16 +48,23 @@ print(Pop())
 
 # Exercise 4
 def Peek():
-    # Write your code here
-    pass
+    if IsEmpty():
+        return -1
+    return Stack[TopOfStack]
 
 
 def Size():
-    # Write your code here
-    pass
-
+    return TopOfStack + 1
 
 # Exercise 5
 def ReverseWord(Word):
-    # Write your code here
-    pass
+    global TopOfStack, Stack
+    TopOfStack = -1
+
+    for char in Word:
+        Push(char)
+
+    reversed_word=""
+    while not IsEmpty():
+        reversed_word+=Pop()
+    return reversed_word
